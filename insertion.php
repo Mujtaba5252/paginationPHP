@@ -1,14 +1,19 @@
 <?php
 include('databaseConnection.php');
+ $count=100;
 
-$sql = "INSERT INTO `studentdata` (`id`, `name`, `university`, `gender`) VALUES ('2', 'sana', 'numl', 'female')";
+for($i=0; $i<=$count; $i++)
+{
+  $sql = "INSERT INTO studentdata (id,name,university,gender) VALUES ('','mujtaba', 'numl', 'male')";
 
-if (mysqli_query($conn, $sql)) 
+  $result=mysqli_query($conn, $sql);
+}
+
+if ($result) 
 {
   echo "New records created successfully";
 } 
 else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-
 ?>
